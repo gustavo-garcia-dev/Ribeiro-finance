@@ -82,12 +82,34 @@ span.item-description{
 }
 
 .side-item.active {
-    background-color: #00C853;
+    background: rgba(34, 197, 94, 0.277);
+    box-shadow: 0 0 15px rgba(1, 177, 66, 0.281);
+    transform: translateX(4px);
+    
 }
+
+.side-item.active span {
+    color: #08c35c;
+}
+
 
 .side-item:hover:not(.active),
 #logout-btn:hover {
-    background-color: #009944;
+   background: rgba(34, 197, 94, 0.325);
+    box-shadow: 0 0 15px rgba(34, 197, 94, 0.444);
+    transform: translateX(4px); 
+}
+
+.side-item:hover:not(.active) span,
+#logout-btn:hover span {
+    color: #08ed6f;
+}
+
+.side-item.active span,
+.side-item.active i,
+.side-item:hover:not(.active) span,
+.side-item:hover:not(.active) i {
+    color: #08c35c;
 }
 
 .side-item a {
