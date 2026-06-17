@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="src/css/style.css">
-    <title>Sidebar</title>
+    <title>Adiconar gastos</title>
 </head>
 <body>
     <nav id="sidebar">
@@ -86,9 +86,46 @@
         </div>
     </nav>
 
-    <main>
-        <h1>Dashboard</h1>
-    </main>
+    <section>
+
+        <main>
+            <h1>Adicionar novo gastos</h1>
+        </main>
+
+        <form>
+            <article class="form-group">
+                <label for="descrição">Descrição</label>
+                <input type="text" id="descrição">
+            </article>
+
+            <article class="form-group">
+                <label for="valor">Valor</label>
+                <input type="text" id="valor">
+            </article>
+
+            <article class="form-group">
+                <label for="categoria">Categoria</label>
+                <select name="categoria" id="categoria">
+                    <option value="">Alimentação</option>
+                    <option value="">Moradia</option>
+                    <option value="">Transporte</option>
+                    <option value="">Compras</option>
+                    <option value="">Tecnologia</option>
+                    <option value="">Saúde</option>
+                    <option value="">Outros</option>
+                </select>
+            </article>
+
+            <article class="form-group">
+                <label for="data">Data</label>
+                <input type="date" id="data">
+            </article>
+
+            <article class="form-group">
+                <button>+ Adicionar gastos</button>
+            </article>
+        </form>
+    </section>
 <script src="src/js/script.js"></script>
 <script src="src/js/marca.js"></script>
 </body>

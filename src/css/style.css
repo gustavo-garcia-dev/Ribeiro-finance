@@ -81,16 +81,12 @@ span.item-description{
     cursor: pointer;
 }
 
-.side-item.active {
-    background: rgba(34, 197, 94, 0.277);
-    box-shadow: 0 0 15px rgba(1, 177, 66, 0.281);
+.side-item.active {   
+     background: rgba(34, 197, 94, 0.325);
+    box-shadow: 0 0 15px rgba(34, 197, 94, 0.444);
     transform: translateX(4px);
-    
 }
 
-.side-item.active span {
-    color: #08c35c;
-}
 
 
 .side-item:hover:not(.active),
@@ -109,7 +105,7 @@ span.item-description{
 .side-item.active i,
 .side-item:hover:not(.active) span,
 .side-item:hover:not(.active) i {
-    color: #08c35c;
+    color:  #08ed6f;
 }
 
 .side-item a {
@@ -121,10 +117,6 @@ span.item-description{
     opacity: 0.7;
 }
 
-.side-item.active a {
-    color: #e3e9f7;
-    opacity: 0.7;
-}
 
 .side-item a i {
     display: flex;
@@ -196,4 +188,52 @@ span.item-description{
 #sidebar.open-sidebar .side-item a {
     justify-content: flex-start;
     gap: 14px;
+}
+
+/* Formulario add gastos */
+form {
+    background-color: rgb(27, 28, 27);
+    padding: 30px;
+    border-radius: 12px;
+    width: 660px;
+    margin: 0 auto;
+    margin-left: 30px;
+    margin-top: 20px;
+}
+
+form .form-group {
+    display: flex;
+    flex-direction: column; 
+    margin-bottom: 20px;
+}
+
+form label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #e3e9f7;
+    opacity: 0.7;
+
+}
+
+form input,
+form select {
+    padding: 10px;
+    border: 1px solid #777474;
+    border-radius: 8px;
+    background-color: #343434;
+    color: #fff;
+    
+}
+
+form input:hover {
+    border: 1px solid  #00C853;;
+}
+
+form button {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: #00C853;
+    color: #fff;
+    cursor: pointer;
 }
