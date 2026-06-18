@@ -1,79 +1,83 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="src/css/style.css">
     <title>Sidebar</title>
 </head>
+
 <body>
     <nav id="sidebar">
         <div id="sidebar_content">
-        <div id="user">
-            <img src="src/img/logo-site (3).png" id="user_avatar" alt="Avatar">
+            <div id="user">
+                <img src="src/img/logo-site (3).png" id="user_avatar" alt="Avatar">
 
-            <p id="user_infos">
-                <span class="item-description">
-                    <span class="ribeiro">RIBEIRO FINANCE</span>
-                </span>
-                <span class="item-description">
-                    Administrador
-                </span>
-            </p>
-        </div>
-
-        <ul id="side_side_items">
-            <li class="side-item">
-                <a href="index.html">
-                    <i class="fa-solid fa-chart-simple"></i>
+                <p id="user_infos">
                     <span class="item-description">
-                        Dashboard
+                        <span class="ribeiro">RIBEIRO FINANCE</span>
                     </span>
-                </a>
-            </li>
-
-             <li class="side-item">
-                <a href="add-gasto.html">
-                    <i class="fa-solid fa-circle-plus"></i>
                     <span class="item-description">
-                        Adicionar gastos
+                        Administrador
                     </span>
-                </a>
-            </li>
+                </p>
+            </div>
 
-            <li class="side-item">
-                <a href="analise.html">
-                    <i class="fa-solid fa-arrow-trend-up"></i>
-                    <span class="item-description">
-                        Análises
-                    </span>
-                </a>
-            </li>
+            <ul id="side_side_items">
+                <li class="side-item">
+                    <a href="index.html">
+                        <i class="fa-solid fa-chart-simple"></i>
+                        <span class="item-description">
+                            Dashboard
+                        </span>
+                    </a>
+                </li>
 
-             <li class="side-item">
-                <a href="#">
-                    <i class="fa-solid fa-bullseye"></i>
-                    <span class="item-description">
-                        Metas
-                    </span>
-                </a>
-            </li>
+                <li class="side-item">
+                    <a href="add-gasto.html">
+                        <i class="fa-solid fa-circle-plus"></i>
+                        <span class="item-description">
+                            Adicionar gastos
+                        </span>
+                    </a>
+                </li>
 
-            
-             <li class="side-item">
-                <a href="#">
-                    <i class="fa-solid fa-gear"></i>
-                    <span class="item-description">
-                        Configurações
-                    </span>
-                </a>
-            </li>
-        </ul>
+                <li class="side-item">
+                    <a href="analise.html">
+                        <i class="fa-solid fa-arrow-trend-up"></i>
+                        <span class="item-description">
+                            Análises
+                        </span>
+                    </a>
+                </li>
 
-        <button id="open_btn">
-            <i id="open_btn_icon" class="fa-solid fa-chevron-right"></i>
-        </button>
+                <li class="side-item">
+                    <a href="#">
+                        <i class="fa-solid fa-bullseye"></i>
+                        <span class="item-description">
+                            Metas
+                        </span>
+                    </a>
+                </li>
+
+
+                <li class="side-item">
+                    <a href="#">
+                        <i class="fa-solid fa-gear"></i>
+                        <span class="item-description">
+                            Configurações
+                        </span>
+                    </a>
+                </li>
+            </ul>
+
+            <button id="open_btn">
+                <i id="open_btn_icon" class="fa-solid fa-chevron-right"></i>
+            </button>
         </div>
 
         <div id="logout">
@@ -86,10 +90,55 @@
         </div>
     </nav>
 
+
+
     <main>
-        <h1>Dashboard</h1>
+
+        <main>
+            <h1>Dashboard</h1>
+        </main>
+
+        <section class="cards">
+
+            <article class="card">
+                <i class="fa-solid fa-arrow-trend-down"></i>
+                <p>Total de gastos</p>
+                <h2 id="total-gastos">R$ 0,00</h2>
+            </article>
+
+            <article class="card">
+                <i class="fa-solid fa-table-list icon-blue"></i>
+                <p>Categorias</p>
+                <h2 id="categoria">0</h2>
+            </article>
+
+            <article class="card">
+                <i class="fa-solid fa-money-bills icon-green"></i>
+                <p>Transações</p>
+                <h2 id="transacoes">0</h2>
+            </article>
+
+        </section>
+
+        <section class="graficos">
+
+            <article class="grafico-card">
+                <h3>Gastos por Categoria</h3>
+                <canvas id="graficoCategorias"></canvas>
+            </article>
+
+            <article class="grafico-card">
+                <h3>Gastos Mensais</h3>
+                <canvas id="graficoMensal"></canvas>
+            </article>
+
+        </section>
     </main>
-<script src="src/js/script.js"></script>
-<script src="src/js/marca.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="src/js/grafico1.js"></script>
+    <script src="src/js/script.js"></script>
+    <script src="src/js/marca.js"></script>
 </body>
+
 </html>

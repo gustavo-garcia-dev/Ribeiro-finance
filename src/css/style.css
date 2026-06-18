@@ -176,7 +176,7 @@ span.item-description{
 }
 
 #sidebar.open-sidebar {
-    min-height: 15%;
+    min-height: 20%;
 }
 
 #sidebar.open-sidebar .item-description {
@@ -196,10 +196,12 @@ form {
     padding: 30px;
     border-radius: 12px;
     width: 660px;
+    max-width: calc(100vw - 120px);
     margin: 0 auto;
     margin-left: 30px;
     margin-top: 20px;
 }
+
 
 form .form-group {
     display: flex;
@@ -236,4 +238,55 @@ form button {
     background-color: #00C853;
     color: #fff;
     cursor: pointer;
+}
+
+/*Cards dashboard*/
+
+.cards {
+    display: flex;
+    justify-content: space-around;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+
+.card {
+    background: #16181d;
+    border: 1px solid #2a2d35;
+    border-radius: 15px;
+    padding: 30px;
+    transition: 0.3s;
+    width: 530px;
+    max-width: 100%;
+    height: 130px;
+    position: relative;
+   
+}
+
+
+.card p {
+    font-size: 15px;
+    opacity: 0.7;
+}
+
+.card h2 {
+    position: absolute;
+    top: 50%;
+    font-size: 30px;
+}
+
+.card i {
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    color: red;
+    font-size: 30px;
+}
+
+.card i.icon-blue {
+    color: rgb(80, 80, 175);
+}
+
+.card i.icon-green {
+    color: #00C853;
 }
