@@ -297,6 +297,7 @@ form button {
     justify-content: space-around;
     gap: 25px;
     flex-wrap: wrap;
+    margin-top: 50px;
 }
 
 .grafico-card {
@@ -304,10 +305,52 @@ form button {
     background: #16181d;
     border: 1px solid #2a2d35;
     border-radius: 15px;
-    padding: 30px;
+    padding: 80px;
     width: 573px;
     justify-content: space-around;
     flex-wrap: wrap;
     position: relative;
-} 
+}
+
+.grafico-card #graficoMensal {
+    height: 281px !important;
+    width: 418px !important;
+}
+
+.grafico-card h3 {
+    position: relative;
+    bottom: 50px;
+}
+
+.grafico-card #graficoCategorias {
+    height: 302px !important;
+    width: 354px !important;
+}
+
+/*card Ultimas transaçoes*/
+.ultimas-transacoes {
+    display: block;
+    padding: 30px;
+    margin-top: 50px;
+     background: #16181d;
+    border: 1px solid #2a2d35;
+    border-radius: 15px;
+    position: relative;
+}
+
+.ultimas-transacoes h2 {
+    display: flex;
+}
+
+
+
+.transacao {
+    display: flex;
+}
+
+
+
+
+
+
 

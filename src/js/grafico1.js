@@ -1,58 +1,24 @@
-new Chart(document.getElementById('graficoMensal'), {
-    type: 'bar',
+new Chart(document.getElementById('graficoCategorias'), {
+    type: 'pie',
 
     data: {
         labels: [
-            'Jan',
-            'Fev',
-            'Mar',
-            'Abr'
+            'Alimentação',
+            'Transporte',
+            'Saúde'
         ],
 
         datasets: [{
-            label: 'Gastos',
-            data: [1200, 1800, 900, 2100],
-            backgroundColor: '#00C853',
-            borderRadius: 10
+            data: [500, 300, 200]
         }]
-     },
+    },
 
     options: {
-        plugins: {
-            legend: {
-                labels: {
-                    color: 'rgba(255, 255, 255, 0.5)',
-                    font: {
-                        size: 20
-                    }
-                }
-            }
-        },
-
-        scales: {
-            x: {
-                ticks: {
-                    color: 'rgba(255, 255, 255, 0.5)',
-                    font: {
-                        size: 20
-                    }
-                },
-                grid: {
-                    color: 'rgba(255, 255, 255, 0.5)'
-                }
-            },
-
-            y: {
-                ticks: {
-                    color: 'rgba(255, 255, 255, 0.5)',
-                    font: {
-                        size: 20
-                    }
-                },
-                grid: {
-                    color: 'rgba(255, 255, 255, 0.5)'
-                }
+        labels: {
+            color: 'rgba(70, 11, 11, 0.5)',
+            font: {
+                size: 20
             }
         }
-    }
+    },
 });
