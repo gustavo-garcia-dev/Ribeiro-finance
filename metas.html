@@ -8,7 +8,7 @@
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="src/css/style.css">
-    <title>Sidebar</title>
+    <title>Metas</title>
 </head>
 
 <body>
@@ -64,7 +64,6 @@
                     </a>
                 </li>
 
-
                 <li class="side-item">
                     <a href="#">
                         <i class="fa-solid fa-gear"></i>
@@ -90,105 +89,59 @@
         </div>
     </nav>
 
-
-
     <main>
+        <h1>Minhas metas</h1>
 
-        <main>
-            <h1>Dashboard</h1>
-        </main>
+        <section class="form-meta">
 
-        <section class="cards">
+            <h2>Criar Nova Meta</h2>
 
-            <article class="card">
-                <i class="fa-solid fa-arrow-trend-down"></i>
-                <p>Total de gastos</p>
-                <h2 id="total-gastos">R$ 0,00</h2>
-            </article>
+            <form id="formMeta">
+                <div class="campo">
+                    <label for="nomeMeta">Nome da Meta</label>
+                    <input id="nomeMeta" type="text" placeholder="Ex: Viagem para Europa, Carro Novo" />
+                </div>
 
-            <article class="card">
-                <i class="fa-solid fa-table-list icon-blue"></i>
-                <p>Categorias</p>
-                <h2 id="categoria">0</h2>
-            </article>
+                <div class="campo">
+                    <label for="valorMeta">Valor da Meta</label>
+                    <input id="valorMeta" type="number" inputmode="decimal" step="0.01" placeholder="R$ 0,00" />
+                </div>
 
-            <article class="card">
-                <i class="fa-solid fa-money-bills icon-green"></i>
-                <p>Transações</p>
-                <h2 id="transacoes">0</h2>
-            </article>
+                <div class="campo">
+                    <label>Prazo</label>
 
+                    <div class="botoes-prazo">
+                        <button type="button" class="prazo ativo">1 ano</button>
+                        <button type="button" class="prazo">2 anos</button>
+                        <button type="button" class="prazo">3 anos</button>
+                        <button type="button" class="prazo">5 anos</button>
+                    </div>
+
+                    <input id="prazoValue" type="number" value="1" />
+                </div>
+
+                <div class="botoes-meta">
+                    <button id="salvarMetaBtn" class="btn-criar" type="button">
+                        <i class="fa-solid fa-plus"></i>
+                        Adicionar meta
+                    </button>
+
+
+
+                </div>
+            </form>
         </section>
 
-        <section class="graficos">
-
-            <article class="grafico-card">
-                <h3>Gastos por Categoria</h3>
-                <canvas id="graficoCategorias"></canvas>
-            </article>
-
-            <article class="grafico-card">
-                <h3>Gastos Mensais</h3>
-                <canvas id="graficoMensal" width="200"></canvas>
-            </article>
-
-        </section>
-
-        <section class="ultimas-transacoes">
-            
-           <h2>Últimas Transações</h2> <br>
-
-            <article class="transacao">
-                <div class="transacao-info">
-                    <h3>farmacia</h3>
-                    <p>Saúde 02/03/2026</p>
-                </div>
-
-                <span>-R$ 85,00</span>
-            </article> <br>
-
-            <article class="transacao">
-                <div class="transacao-info">
-                    <h3>Alimentos</h3>
-                    <p>Saúde 05/03/2026</p>
-                </div>
-
-                <span>-R$ 100,00</span>
-            </article> <br>
-
-            <article class="transacao">
-                <div class="transacao-info">
-                    <h3>Gasolina</h3>
-                    <p>Saúde 06/03/2026</p>
-                </div>
-
-                <span>-R$ 200,00</span>
-            </article> <br>
-
-            <article class="transacao">
-                <div class="transacao-info">
-                    <h3>Aluguel</h3>
-                    <p>Saúde 07/03/2026</p>
-                </div>
-
-                <span>-R$ 150,00</span>
-            </article> <br>
-
-            <article class="transacao">
-                <div class="transacao-info">
-                    <h3>Restaurante</h3>
-                    <p>Saúde 02/03/2026</p>
-                </div>
-
-                <span>-R$ 90,00</span>
-            </article>
+        <section id="metasPreview" style="display:none;" class="form-meta" aria-live="polite">
+            <h2>Como vai ser a sua meta</h2>
+            <div id="metasList"></div>
         </section>
     </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="src/js/grafico1.js"></script>
-    <script src="src/js/grafico2.js"></script>
     <script src="src/js/script.js"></script>
     <script src="src/js/marca.js"></script>
+    <script src="src/js/metas.js"></script>
 </body>
+
 </html>
+
