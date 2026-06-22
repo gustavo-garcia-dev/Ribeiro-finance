@@ -8,7 +8,8 @@
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="src/css/style.css">
-    <title>Analise</title>
+    <link rel="stylesheet" href="src/css/darkMode.css">
+    <title>Configuração</title>
 </head>
 
 <body>
@@ -90,31 +91,45 @@
         </div>
     </nav>
 
-    <main>
+   
+    <main class="config-container">
+
         <main>
-            <h1>Análises detalhadas</h1>
+            <h1>Configurações</h1>
         </main>
 
-        <section class="analises-grid">
+        <section class="config-card">
 
-            <article class="card-analise">
-                <h2>Distribuição por Categoria</h2>
-                <canvas id="graficoCategorias"></canvas>
+            <h2>Preferências</h2>
+
+            <article class="config-item">
+                <div>
+                    <h3>Notificações</h3>
+                    <p>Receber alertas de gastos</p>
+                </div>
+
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                </label>
             </article>
 
-            <article class="card-analise">
-                <h2>Comparação Mensal</h2>
-                <canvas id="graficoMensal"></canvas>
-            </article>
+           
+        </section>
+
+        <section class="config-card">
+
+            <h2>Limite Mensal</h2>
+
+            <input type="number" placeholder="R$ 3000.00" class="input-limite">
 
         </section>
+
     </main>
-     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-     <script src="src/js/graficoAnalise1.js"></script>
-     <script src="src/js/graficoAnalise2.js"></script>
+
     <script src="src/js/script.js"></script>
     <script src="src/js/marca.js"></script>
-    <script src="src/js/appTheme.js"></script>
+    <script src="src/js/darkMode.js"></script>
 </body>
 
 </html>

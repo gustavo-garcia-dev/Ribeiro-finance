@@ -13,6 +13,10 @@ body {
     background-color: #000000e9;;
 }
 
+/* default: modo escuro (mantém suas cores atuais)
+   modo claro é aplicado via src/css/darkMode.css com body.theme-light */
+
+
 main {
     padding: 20px;
     color: #fff;
@@ -32,7 +36,7 @@ span.item-description{
     flex-direction: column;
     justify-content: space-between;
     background-color: #000000e9;
-    height: 100vh;
+    min-height: 100vh;
     border-radius: 0px 18px 18px 0px;
     position: relative;
     transition: all .5s;
@@ -219,7 +223,7 @@ form label {
 
 form input,
 form select {
-    padding: 10px;
+    padding: 20px;
     border: 1px solid #777474;
     border-radius: 8px;
     background-color: #343434;
@@ -332,6 +336,7 @@ form button {
     display: block;
     padding: 30px;
     margin-top: 50px;
+    margin-left: 20px;
     background: #16181d;
     border: 1px solid #2a2d35;
     border-radius: 15px;
@@ -369,8 +374,6 @@ form button {
 /*cards metas*/
 
 .form-meta{
-    background: #16181d;
-    border: 1px solid #2a2d35;
     border-radius: 20px;
     padding: 35px;
     margin-top: 30px;
@@ -469,6 +472,129 @@ form button {
 .btn-criar:hover{
     background: #00C853;
     cursor: pointer;
+}
+
+/*card analises*/
+.analises-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.card-analise{
+    background: #16181d;
+    border: 1px solid #2a2d35;
+    border-radius: 20px;
+    padding: 30px;
+}
+
+.card-analise h2{
+    color: white;
+    margin-bottom: 25px;
+}
+
+.card-analise canvas{
+    width: 100% !important;
+    height: 350px !important;
+}
+
+/*card configuração*/
+.config-container{
+    padding: 30px;
+}
+
+.config-container h1{
+    color: white;
+    margin-bottom: 25px;
+    font-size: 42px;
+}
+
+.config-card{
+    background: #16181d;
+    border: 1px solid #2a2d35;
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 30px;
+    max-width: 850px;
+}
+
+.config-card h2{
+    color: white;
+    margin-bottom: 30px;
+}
+
+/*item configuração*/
+.config-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.config-item h3{
+    color: white;
+    margin-bottom: 5px;
+}
+
+.config-item p{
+    color: #8b8f9c;
+}
+
+/*input configuração*/
+.input-limite{
+    width: 100%;
+    padding: 18px;
+    background: #22242c;
+    border: 1px solid #3a3d46;
+    border-radius: 12px;
+    color: white;
+    font-size: 18px;
+}
+
+.input-limite:focus{
+    outline: none;
+    border-color: #08ed6f;
+}
+
+/*switch configuração*/
+.switch{
+    position: relative;
+    width: 60px;
+    height: 32px;
+}
+
+.switch input{
+    display: none;
+}
+
+.slider{
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    background: #3a3d46;
+    border-radius: 30px;
+    transition: .3s;
+}
+
+.slider::before{
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    left: 4px;
+    top: 4px;
+    background: white;
+    border-radius: 50%;
+    transition: .3s;
+}
+
+.switch input:checked + .slider{
+    background: #08ed6f;
+}
+
+.switch input:checked + .slider::before{
+    transform: translateX(28px);
 }
 
 
