@@ -93,10 +93,10 @@
             <h1>Adicionar novo gastos</h1>
         </main>
 
-        <form>
+        <form id="form-gasto">
             <article class="form-group">
-                <label for="descrição">Descrição</label>
-                <input type="text" id="descrição" placeholder="Ex: saida para o restaurante">
+                <label for="descricao">Descrição</label>
+                <input type="text" id="descricao" placeholder="Ex: saida para o restaurante">
             </article>
 
             <article class="form-group">
@@ -107,13 +107,13 @@
             <article class="form-group">
                 <label for="categoria">Categoria</label>
                 <select name="categoria" id="categoria">
-                    <option value="">Alimentação</option>
-                    <option value="">Moradia</option>
-                    <option value="">Transporte</option>
-                    <option value="">Compras</option>
-                    <option value="">Tecnologia</option>
-                    <option value="">Saúde</option>
-                    <option value="">Outros</option>
+                    <option value="Alimentacao">Alimentação</option>
+                    <option value="Moradia">Moradia</option>
+                    <option value="Transporte">Transporte</option>
+                    <option value="Compras">Compras</option>
+                    <option value="Tecnologia">Tecnologia</option>
+                    <option value="Saude">Saúde</option>
+                    <option value="Outros">Outros</option>
                 </select>
             </article>
 
@@ -123,12 +123,12 @@
             </article>
 
             <article class="form-group">
-                <button>+ Adicionar gastos</button>
+                <button type="submit">+ Adicionar gastos</button>
             </article>
         </form>
     </section>
 <script src="src/js/script.js"></script>
 <script src="src/js/marca.js"></script>
-<script src="src/js/appTheme.js"></script>
+<script src="src/js/add.gasto.js"></script>
 </body>
 </html>
