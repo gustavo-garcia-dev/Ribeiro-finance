@@ -361,7 +361,7 @@ form button {
 }
 
 .transacao span {
-    margin-left: 84%;
+    margin-left: 75%;
     color: red;
     font-size: 20px;
 }
@@ -595,6 +595,92 @@ form button {
 
 .switch input:checked + .slider::before{
     transform: translateX(28px);
+}
+
+.transacao {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 18px 0;
+    border-bottom: 1px solid #2a2d35;
+}
+
+.transacao-info {
+    flex: 1;
+}
+
+.transacao-info h3 {
+    margin: 0 0 5px 0;
+}
+
+.transacao-info p {
+    margin: 0;
+    opacity: 0.6;
+}
+
+.valor-transacao {
+    width: 150px;
+    text-align: right;
+    color: #ff5b5b;
+    font-weight: bold;
+}
+
+.btn-excluir {
+    width: 40px;
+    margin-left: 15px;
+
+    background: transparent;
+    border: none;
+
+    color: #ff5b5b;
+    font-size: 16px;
+
+    cursor: pointer;
+}
+
+.btn-excluir:hover {
+    color: #ff3030;
+    transform: scale(1.15);
+}
+
+.btn-editar,
+.btn-excluir {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    width: 35px;
+}
+
+.btn-editar {
+    color: #08ed6f;
+}
+
+.btn-excluir {
+    color: #ff5b5b;
+}
+
+.btn-editar:hover,
+.btn-excluir:hover {
+    transform: scale(1.15);
+}
+
+.transacao {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 18px 0;
+    border-bottom: 1px solid #2a2d35;
+}
+
+.transacao-info {
+    flex: 1;
+}
+
+.valor-transacao {
+    width: 150px;
+    text-align: right;
+    margin-right: 15px;
 }
 
 

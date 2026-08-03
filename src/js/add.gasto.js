@@ -5,6 +5,34 @@ const valor = document.getElementById("valor");
 const categoria = document.getElementById("categoria");
 const data = document.getElementById("data");
 
+// Pega os gastos salvos
+let gastos = JSON.parse(localStorage.getItem("gastos")) || [];
+
+// Verifica se estamos editando algum gasto
+const gastoEditando = localStorage.getItem("gastoEditando");
+
+
+// ==============================
+// PREENCHER FORMULÁRIO AO EDITAR
+// ==============================
+
+if (gastoEditando !== null) {
+
+    const gasto = gastos[Number(gastoEditando)];
+
+    if (gasto) {
+        descricao.value = gasto.descricao;
+        valor.value = gasto.valor;
+        categoria.value = gasto.categoria;
+        data.value = gasto.data;
+    }
+}
+
+
+// ==============================
+// SALVAR FORMULÁRIO
+// ==============================
+
 form.addEventListener("submit", function(event) {
 
     event.preventDefault();
@@ -17,19 +45,27 @@ form.addEventListener("submit", function(event) {
     };
 
 
+    // Se estiver editando
+    if (gastoEditando !== null) {
 
-//pega os gastos que ja estão salvos 
-let gastos = JSON.parse(localStorage.getItem("gastos")) || []
+        gastos[Number(gastoEditando)] = gasto;
 
-//adicionar novo gasto
-gastos.push(gasto)
+        localStorage.setItem("gastos", JSON.stringify(gastos));
 
-//salvar no navegador
-localStorage.setItem("gastos", JSON.stringify(gastos))
+        localStorage.removeItem("gastoEditando");
 
-console.log(gastos)
+        window.location.href = "index.html";
 
-//limpar formulario
-form.reset()
+    } 
+    
+    // Se for um novo gasto
+    else {
+
+        gastos.push(gasto);
+
+        localStorage.setItem("gastos", JSON.stringify(gastos));
+
+        form.reset();
+    }
 
 });

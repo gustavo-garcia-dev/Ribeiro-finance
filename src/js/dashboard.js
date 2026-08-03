@@ -32,33 +32,52 @@ gastos.forEach(function (gasto) {
 categoria.textContent = categoriasUnicas.size
 
 //ultimas transaçoes
-gastos.forEach(function(gasto) {
+gastos.forEach(function(gasto, index) {
 
-    listaTransacoes.innerHTML += `
-        <article class="transacao">
+   listaTransacoes.innerHTML += `
+    <article class="transacao">
 
-            <div class="transacao-info">
+        <div class="transacao-info">
+            <h3>${gasto.descricao}</h3>
 
-                <h3>${gasto.descricao}</h3>
+            <p>
+                ${gasto.categoria}  
+                ${gasto.data ? gasto.data.split("-").reverse().join("/") : ""}
+            </p>
+        </div>
 
-                <p>
-                    ${gasto.categoria} • 
-                </p>
+        <span class="valor-transacao">
+            - ${gasto.valor.toLocaleString("pt-BR", {
+                style: "currency",
+                currency: "BRL"
+            })}
+        </span>
 
-                <p>
-                     ${gasto.data.split("-").reverse().join("/")}
-                <p>
+        <button 
+            class="btn-editar"
+            onclick="editarGasto(${index})">
+            <i class="fa-solid fa-pen"></i>
+        </button>
 
-            </div>
+        <button class="btn-excluir" onclick="excluirGasto(${index})">
+            <i class="fa-solid fa-trash"></i>
+        </button>
 
-            <span>
-                 ${gasto.valor.toLocaleString("pt-BR", {
-                    style: "currency",
-                    currency: "BRL"
-                })}
-            </span>
-
-        </article>
-    `;
+    </article>
+`;
 
 });
+
+//editar gasto
+function editarGasto(index) {
+    const gasto = gastos[index]
+    localStorage.setItem("gastoEditando", index)
+    window.location.href = "add-gasto.html"
+}
+
+//excluir gasto
+function excluirGasto(index) {
+    gastos.splice(index, 1)
+    localStorage.setItem("gastos", JSON.stringify(gastos))
+    location.reload() 
+}

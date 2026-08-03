@@ -1,24 +1,48 @@
-new Chart(document.getElementById('graficoCategorias'), {
-    type: 'pie',
+const canvasCategorias = document.getElementById("graficoCategorias");
 
-    data: {
-        labels: [
-            'Alimentação',
-            'Transporte',
-            'Saúde'
-        ],
+if (canvasCategorias) {
 
-        datasets: [{
-            data: [500, 300, 200]
-        }]
-    },
+    const gastos = JSON.parse(localStorage.getItem("gastos")) || [];
 
-    options: {
-        labels: {
-            color: 'rgba(70, 11, 11, 0.5)',
-            font: {
-                size: 20
+    const categorias = {};
+
+    gastos.forEach(function(gasto) {
+
+        const categoria = gasto.categoria;
+        const valor = Number(gasto.valor);
+
+        if (Object.prototype.hasOwnProperty.call(categorias, categoria)) {
+            categorias[categoria] += valor;
+        } else {
+            categorias[categoria] = valor;
+        }
+
+    });
+
+    new Chart(canvasCategorias, {
+
+        type: "pie",
+
+        data: {
+            labels: Object.keys(categorias),
+
+            datasets: [{
+                data: Object.values(categorias)
+            }]
+        },
+
+        options: {
+            responsive: true,
+
+            plugins: {
+                legend: {
+                    labels: {
+                        color: "#ffffff"
+                    }
+                }
             }
         }
-    },
-});
+
+    });
+
+}
