@@ -93,44 +93,78 @@
     <main>
         <h1>Minhas metas</h1>
 
-        <section class="form-meta">
+        <section class="metas-container">
 
-            <h2>Criar Nova Meta</h2>
+            <section class="form-meta">
 
-            <form id="formMeta">
-                <div class="campo">
-                    <label for="nomeMeta">Nome da Meta</label>
-                    <input id="nomeMeta" type="text" placeholder="Ex: Viagem para Europa, Carro Novo" />
-                </div>
+                <h2>Criar Nova Meta</h2>
 
-                <div class="campo">
-                    <label for="valorMeta">Valor da Meta</label>
-                    <input id="valorMeta" type="number" inputmode="decimal" step="0.01" placeholder="R$ 0,00" />
-                </div>
+                <form id="formMeta">
 
-                <div class="campo">
-                    <label>Prazo</label>
-
-                    <div class="botoes-prazo">
-                        <button type="button" class="prazo ativo">1 ano</button>
-                        <button type="button" class="prazo">2 anos</button>
-                        <button type="button" class="prazo">3 anos</button>
-                        <button type="button" class="prazo">5 anos</button>
+                    <div class="campo">
+                        <label for="nomeMeta">Nome da Meta</label>
+                        <input id="nomeMeta" type="text" placeholder="Ex: Viagem para Europa, Carro Novo" />
                     </div>
 
-                    <input id="prazoValue" type="number" value="1" />
-                </div>
+                    <div class="campo">
+                        <label for="valorMeta">Valor da Meta</label>
+                        <input id="valorMeta" type="number" inputmode="decimal" step="0.01" placeholder="R$ 0,00" />
+                    </div>
 
-                <div class="botoes-meta">
-                    <button id="salvarMetaBtn" class="btn-criar" type="button">
-                        <i class="fa-solid fa-plus"></i>
-                        Adicionar meta
-                    </button>
+                    <div class="campo">
 
+                        <label>Prazo</label>
 
+                        <div class="botoes-prazo">
 
-                </div>
-            </form>
+                            <button type="button" class="prazo ativo">
+                                1 ano
+                            </button>
+
+                            <button type="button" class="prazo">
+                                2 anos
+                            </button>
+
+                            <button type="button" class="prazo">
+                                3 anos
+                            </button>
+
+                            <button type="button" class="prazo">
+                                5 anos
+                            </button>
+
+                        </div>
+
+                        <input id="prazoValue" type="number" value="1" />
+
+                    </div>
+
+                    <div class="botoes-meta">
+
+                        <button id="salvarMetaBtn" class="btn-criar" type="button">
+
+                            <i class="fa-solid fa-plus"></i>
+
+                            Adicionar meta
+
+                        </button>
+
+                    </div>
+
+</form>
+
+            </section>
+
+            <!-- METAS CRIADAS -->
+
+            <section class="lista-metas">
+
+                <h2>Minhas Metas</h2>
+
+                <div id="metasList"></div>
+
+            </section>
+
         </section>
 
         <section id="metasPreview" style="display:none;" class="form-meta" aria-live="polite">
@@ -142,8 +176,6 @@
     <script src="src/js/script.js"></script>
     <script src="src/js/marca.js"></script>
     <script src="src/js/metas.js"></script>
-    <script src="src/js/appTheme.js"></script>
 </body>
 
 </html>
-

@@ -1,55 +1,83 @@
-const categorias = document.getElementById("graficoCategorias");
+const gastos = JSON.parse(localStorage.getItem("gastos")) || [];
 
-new Chart(categorias, {
-    type: "bar",
-    data: {
-        labels: [
-            "Alimentação",
-            "Moradia",
-            "Transporte",
-            "Saúde"
-        ],
-        datasets: [{
-            data: [570, 1200, 280, 85],
-            backgroundColor: [
-                "#a78bfa",
-                "#ec4899",
-                "#f59e0b",
-                "#22c55e"
-            ],
-            borderRadius: 20
-        }]
-    },
-    options: {
-        indexAxis: "y",
+const categorias = {};
 
-        plugins: {
-            legend: {
-                display: false
-            }
+gastos.forEach(function (gasto) {
+    if (categorias[gasto.categoria]) {
+        categorias[gasto.categoria] += gasto.valor;
+    } else {
+        categorias[gasto.categoria] = gasto.valor;
+    }
+});
+
+const nomesCategorias = Object.keys(categorias);
+const valoresCategorias = Object.values(categorias);
+
+const ctx = document.getElementById("graficoCategorias");
+
+if (ctx) {
+    new Chart(ctx, {
+        type: "bar",
+
+        data: {
+            labels: nomesCategorias,
+
+            datasets: [{
+                label: "Gastos",
+                data: valoresCategorias,
+
+                backgroundColor: [
+                    "#9b7bea",
+                    "#e83e8c",
+                    "#f5a000",
+                    "#20c46b",
+                    "#00b85a",
+                    "#3498db",
+                    "#8e44ad"
+                ],
+
+                borderRadius: 10
+            }]
         },
 
-        scales: {
-            x: {
-                ticks: {
-                    color: "white"
-                },
-                grid: {
-                    color: "rgba(255,255,255,0.05)"
+        options: {
+            indexAxis: "y",
+
+            responsive: true,
+            maintainAspectRatio: false,
+
+            plugins: {
+                legend: {
+                    display: false
                 }
             },
 
-            y: {
-                ticks: {
-                    color: "white",
-                    font: {
-                        size: 15
+scales: {
+                x: {
+                    beginAtZero: true,
+                    ticks: {
+                        color: "white",
+                        font: {
+                            size: 14
+                        }
+                    },
+                    grid: {
+                        color: "rgba(255,255,255,0.05)"
                     }
                 },
-                grid: {
-                    display: false
+
+                y: {
+                    ticks: {
+                        color: "white",
+                        font: {
+                            size: 14
+                        }
+                    },
+                    grid: {
+                        color: "rgba(255,255,255,0.05)"
+                    }
                 }
             }
         }
-    }
-});
+    });
+}

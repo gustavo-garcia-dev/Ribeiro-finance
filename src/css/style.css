@@ -18,8 +18,10 @@ body {
 
 
 main {
+    flex: 1;
     padding: 20px;
     color: #fff;
+    min-width: 0;
 }
 
 span.item-description{
@@ -480,6 +482,14 @@ form button {
     grid-template-columns: 1fr 1fr;
     gap: 30px;
     margin-top: 30px;
+    max-width: 1400px;
+}
+
+@media (max-width: 900px) {
+    .analises-grid {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+    }
 }
 
 .card-analise{
@@ -487,6 +497,8 @@ form button {
     border: 1px solid #2a2d35;
     border-radius: 20px;
     padding: 30px;
+    min-width: 0;
+    min-height: 420px;
 }
 
 .card-analise h2{
@@ -496,7 +508,7 @@ form button {
 
 .card-analise canvas{
     width: 100% !important;
-    height: 350px !important;
+    height: 330px !important;
 }
 
 /*card configuração*/
@@ -683,6 +695,258 @@ form button {
     margin-right: 15px;
 }
 
+.metas-container {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    margin-top: 25px;
+}
+
+.form-meta {
+    flex: 1;
+    max-width: 480px;
+    background: linear-gradient(145deg, #1a1d24, #14161c);
+    border: 1px solid #2a2d35;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Override do CSS global de <form> para o form dentro de .form-meta */
+.form-meta form {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+}
+
+.lista-metas {
+    flex: 1.3;
+    min-width: 0;
+}
+
+.lista-metas h2 {
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+#metasList {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ===== Card de meta ===== */
+.meta-preview-card {
+    background: linear-gradient(145deg, #1c1f27, #16181d);
+    border: 1px solid #2d313b;
+    border-radius: 18px;
+    padding: 25px;
+    transition: all .3s ease;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.meta-preview-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(0, 217, 95, 0.5);
+    box-shadow: 0 14px 34px rgba(0, 217, 95, 0.12);
+}
+
+.meta-card-top {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 22px;
+}
+
+.meta-card-top i {
+    font-size: 28px;
+    color: #00d95f;
+    background: rgba(0, 217, 95, 0.12);
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    flex-shrink: 0;
+}
+
+.meta-card-top h3 {
+    margin: 0;
+    font-size: 19px;
+    color: #fff;
+}
+
+.meta-card-top p {
+    margin: 4px 0 0;
+    opacity: 0.6;
+    font-size: 13px;
+}
+
+.meta-card-info {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid #2a2d35;
+    border-radius: 14px;
+    padding: 16px;
+    margin-bottom: 20px;
+}
+
+.meta-card-info div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex: 1;
+}
+
+.meta-card-info span {
+    font-size: 12px;
+    opacity: 0.6;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.meta-card-info strong {
+    font-size: 15px;
+    color: #fff;
+}
+
+.progresso-meta {
+    margin-bottom: 20px;
+}
+
+.progresso-texto {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 13px;
+    color: #cfcfcf;
+}
+
+.barra-progresso {
+    width: 100%;
+    height: 9px;
+    background: #2a2d35;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.barra-progresso-preenchida {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #00C853, #00d95f);
+    border-radius: 10px;
+    transition: width .6s ease;
+}
+
+/* ===== Adicionar dinheiro ===== */
+.adicionar-dinheiro {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.valor-adicionar {
+    flex: 1;
+    padding: 12px 14px;
+    background: #23252b;
+    border: 1px solid #3a3d46;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 15px;
+}
+
+.valor-adicionar:focus {
+    outline: none;
+    border-color: #00d95f;
+}
+
+.btn-adicionar-dinheiro {
+    padding: 12px 18px;
+    background: #08ed6f;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color .2s ease;
+}
+
+.btn-adicionar-dinheiro:hover {
+    background: #00C853;
+}
+
+/* ===== Ações do card ===== */
+.acoes-meta {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-excluir-meta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 14px;
+    background: rgba(255, 91, 91, 0.1);
+    border: 1px solid rgba(255, 91, 91, 0.3);
+    border-radius: 10px;
+    color: #ff5b5b;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all .2s ease;
+}
+
+.btn-excluir-meta:hover {
+    background: rgba(255, 91, 91, 0.2);
+    color: #ff3030;
+}
+
+/* ===== Estado vazio ===== */
+.sem-metas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 50px 20px;
+    background: #16181d;
+    border: 1px dashed #2d313b;
+    border-radius: 18px;
+    text-align: center;
+}
+
+.sem-metas i {
+    font-size: 45px;
+    color: #2a2d35;
+}
+
+.sem-metas p {
+    color: #8b8f9c;
+    font-size: 15px;
+}
+
+@media (max-width: 900px) {
+
+    .metas-container {
+        flex-direction: column;
+    }
+
+    .form-meta,
+    .lista-metas {
+        width: 100%;
+        max-width: 100%;
+        flex: 1;
+    }
+
+}
 
 
 
