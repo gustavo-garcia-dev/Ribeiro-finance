@@ -33,7 +33,7 @@ if (gastoEditando !== null) {
 // SALVAR FORMULÁRIO
 // ==============================
 
-form.addEventListener("submit", function(event) {
+form.addEventListener("submit", function (event) {
 
     event.preventDefault();
 
@@ -56,8 +56,8 @@ form.addEventListener("submit", function(event) {
 
         window.location.href = "index.html";
 
-    } 
-    
+    }
+
     // Se for um novo gasto
     else {
 
@@ -67,5 +67,6 @@ form.addEventListener("submit", function(event) {
 
         form.reset();
     }
+
 
 });
